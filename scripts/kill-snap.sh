@@ -33,9 +33,9 @@ do
 
 	rm -rf "$opath"
 
-	mkdir -p "$(dirname "$path")"
-	echo "DIE DIE DIE" > "$path"
-	chmod 444 "$path"
-	chattr +i "$path"
+	mkdir -p "$(dirname "$opath")"
+	echo "DIE DIE DIE" > "$opath"
+	chmod 444 "$opath"
+	chattr +i "$opath"
 done
 
