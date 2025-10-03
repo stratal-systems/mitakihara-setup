@@ -2,6 +2,8 @@
 
 set -e
 
+mkdir -p ./depget
+
 if ! [ -f ./depget/cuda-ubuntu2004.pin ]
 then
 	echo "cuda-ubuntu2004.pin not found"
@@ -28,10 +30,7 @@ then
 	else
 		echo "cuda-repo-ubuntu2004-11-0-local_11.0.2-450.51.05-1_amd64.deb not in annex, downloading..."
 		wget -O ./depget/cuda-repo-ubuntu2004-11-0-local_11.0.2-450.51.05-1_amd64.deb http://developer.download.nvidia.com/compute/cuda/11.0.2/local_installers/cuda-repo-ubuntu2004-11-0-local_11.0.2-450.51.05-1_amd64.deb
-		cp -L ./depget/cuda-repo-ubuntu2004-11-0-local_11.0.2-450.51.05-1_amd64.deb /etc/apt/preferences.d/cuda-repository-pin-600
 	fi
-else
-	cp -L ./dep/cuda-repo-ubuntu2004-11-0-local_11.0.2-450.51.05-1_amd64.deb ./depget
 fi
 
 dpkg -i ./depget/cuda-repo-ubuntu2004-11-0-local_11.0.2-450.51.05-1_amd64.deb
