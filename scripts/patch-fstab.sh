@@ -1,12 +1,15 @@
 #!/bin/bash
 
+echo "doing nothing. "
+exit 0
+
 if ! command -v zstd
 then
 	echo "zstd not found, leaving fstab as-is!"
 	exit 2
 fi
 
-backup = /etc/fstab.bak
+backup=/etc/fstab.bak
 while [ -f "$backup" ]
 do
 	backup="${backup}.new"
