@@ -32,9 +32,13 @@ do
 	fi
 
 	rm -rf "$opath"
-
 	mkdir -p "$(dirname "$opath")"
-	echo "DIE DIE DIE" > "$opath"
+
+	for i in $(seq 666)
+	do
+		echo -n "I HATE THE ANTICHRIST" >> "$opath"
+	done
+
 	chmod 444 "$opath"
 	chattr +i "$opath"
 done
