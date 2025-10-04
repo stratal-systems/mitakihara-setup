@@ -36,3 +36,10 @@ apt-key add /var/cuda-repo-ubuntu2004-11-0-local/7fa2af80.pub
 apt-get update
 apt-get -y install cuda
 
+echo "It installed, disabling gdm service!"
+
+service gdm stop
+systemctl disable gdm
+
+echo "Now go and reboot!"
+
