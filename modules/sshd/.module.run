@@ -1,0 +1,9 @@
+#!/bin/sh
+
+echo "Removing weird ubuntu cloud init thing..?"
+set -x
+rm -rf /etc/ssh/sshd_config.d/*cloud-init*
+
+echo "Restarting sshd..."
+service sshd restart
+

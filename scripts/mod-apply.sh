@@ -10,6 +10,8 @@ mods="$@"
 
 for mod in $mods
 do
+	rm -rf /.module.run
+
 	if [ -f "./modules/${mod}.tar.zst" ]
 	then
 		echo "$mod is a file, unpacking"
@@ -23,6 +25,11 @@ do
 			--no-target-directory \
 			--verbose \
 			./modules/$mod /
+	fi
+
+	if [ -f "/.module.run" ]
+	then
+		/.module.run
 	fi
 done
 
