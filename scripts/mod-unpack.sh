@@ -18,6 +18,8 @@ do
 		echo "$mod is not a file, skipping"
 		continue
 	fi
-	tar xf ./modules/$mod --directory ./modules.unpack/${foo%".tar.zst"}
+	targetdir="./modules.unpack/${mod%".tar.zst"}"
+	mkdir -p "$targetdir"
+	tar xf ./modules/$mod --directory "$targetdir"
 done
 
