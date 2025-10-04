@@ -10,7 +10,6 @@ mods="$@"
 
 for mod in $mods
 do
-	rm -rf /.mod
 	rm -rf ./tmp
 	mkdir -p ./tmp
 
@@ -41,9 +40,9 @@ do
 		--verbose \
 		"$copy_from" /
 
-	if [ -f "/.mod/run" ]
+	if [ -f "$copy_from/.mod/run" ]
 	then
-		/.mod/run
+		"$copy_from/.mod/run"
 	fi
 done
 
