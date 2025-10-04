@@ -99,6 +99,7 @@ CMakeInit.txt
 modules.unpack
 tmp
 !modules/*.tar*
+depget
 
 
 
