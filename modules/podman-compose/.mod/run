@@ -1,0 +1,18 @@
+#!/bin/bash
+
+docker_compose="/usr/libexec/docker/cli-plugins/docker-compose"
+
+if [ -f "$docker_compose" ]
+then
+	echo "docker-compose binary already present, bye!"
+	exit 0
+fi
+
+# Install docker-compose without installing docker
+(
+	set -e
+	cd depget
+	apt download docker-compose-v2
+	dpkg -i --force-all ./docker-compose-v2*.deb
+)
+
