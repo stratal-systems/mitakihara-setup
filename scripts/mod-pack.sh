@@ -8,10 +8,11 @@ else
 fi
 
 set -x
+set -e
 
 for mod in $mods
 do
-	noisepath="./modules.unpack/$mod/.noise"
+	noisepath="./modules.unpack/$mod/.mod/noise"
 	outpath="./modules/${mod}.tar.zst"
 	if ! [ -f "$noisepath" ]
 	then

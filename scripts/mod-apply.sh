@@ -10,7 +10,7 @@ mods="$@"
 
 for mod in $mods
 do
-	rm -rf /.module.run
+	rm -rf /.mod
 
 	if [ -f "./modules/${mod}.tar.zst" ]
 	then
@@ -27,9 +27,9 @@ do
 			./modules/$mod /
 	fi
 
-	if [ -f "/.module.run" ]
+	if [ -f "/.mod/run" ]
 	then
-		/.module.run
+		/.mod/run
 	fi
 done
 
