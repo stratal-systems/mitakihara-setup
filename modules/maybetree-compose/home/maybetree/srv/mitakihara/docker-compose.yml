@@ -1,18 +1,1 @@
 services:
-  tailscale:
-    init: true
-    image: tailscale/tailscale
-    container_name: tailscale
-    network_mode: "host"
-    cap_add:
-      - NET_ADMIN
-      - SYS_MODULE
-    volumes:
-      - /dev/net/tun:/dev/net/tun
-      - ./data/tailscale/varlib:/var/lib/tailscale  # State
-      - ./data/tailscale/varrun:/var/run/tailscale  # Sockets
-    #environment:
-    #  - TS_EXTRA_ARGS=--ssh
-    command: tailscaled
-    restart: unless-stopped
-
