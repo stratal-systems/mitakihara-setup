@@ -12,10 +12,12 @@ set -x
 for mod in $mods
 do
 	noisepath="./modules.unpack/$mod/.noise"
+	outpath="./modules/${mod}.tar.zst"
 	if ! [ -f "$noisepath" ]
 	then
 		head -c 2048 /dev/urandom > $noisepath || exit 9
 	fi
-	tar caf "./modules/${mod}.tar.zst" . --directory "./modules.unpack/$mod"
+	rm -f "$outpath" || exit 1
+	tar caf "$outpath" . --directory "./modules.unpack/$mod"
 done
 
