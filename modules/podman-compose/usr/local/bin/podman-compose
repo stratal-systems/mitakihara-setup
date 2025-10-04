@@ -20,5 +20,5 @@ else
 	fi
 fi
 
-DOCKER_HOST="unix://$PODMAN_SOCKET" $docker_compose 
+DOCKER_HOST="unix://$PODMAN_SOCKET" $docker_compose "$@"
 
