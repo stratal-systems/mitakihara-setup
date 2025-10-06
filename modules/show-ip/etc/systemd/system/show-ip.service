@@ -1,12 +1,13 @@
 [Unit]
-Description=Show IP address on tty1 at boot
-After=network-online.target
+Description=Show IP address on tty1 after getty
+After=getty@tty1.service
+Requires=getty@tty1.service
 
 [Service]
+ExecStart=/bin/bash -c "sleep 1; ip -c a > /dev/tty1"
 Type=oneshot
-ExecStart=/bin/bash -c "ip -c a > /dev/tty1"
-StandardOutput=tty
 RemainAfterExit=yes
+StandardOutput=tty
 
 [Install]
 WantedBy=multi-user.target
