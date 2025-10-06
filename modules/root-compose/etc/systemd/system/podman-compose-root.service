@@ -1,0 +1,16 @@
+[Unit]
+Description=Root's podman-compose
+Requires=podman.service
+After=podman.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+WorkingDirectory=/srv/mitakihara
+ExecStart=/usr/local/bin/podman-compose up -d
+ExecStop=/usr/local/bin/podman-compose down
+TimeoutStartSec=0
+
+[Install]
+WantedBy=multi-user.target
+
