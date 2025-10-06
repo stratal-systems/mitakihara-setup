@@ -28,7 +28,7 @@ else
 fi
 
 cd depget
-tar xf ./btop.tbz
+tar xf ./"$arname".tbz
 cd btop
 ./install.sh
 
