@@ -1,0 +1,13 @@
+[Unit]
+Description=Show IP address on tty1 at boot
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash -c "ip -c a > /dev/tty1"
+StandardOutput=tty
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
+
