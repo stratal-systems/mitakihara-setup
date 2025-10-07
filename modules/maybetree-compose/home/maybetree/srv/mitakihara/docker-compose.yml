@@ -12,7 +12,7 @@ services:
       - ./data/minicycle/minicycle:${HERE}/data/minicycle/minicycle:rw
       - ./data/minicycle/gnupg:/root/.gnupg:rw
       - ./data/minicycle/ssh:/root/.ssh:rw
-    workdir: "${HERE}"
+    working_dir: "${HERE}"
     env:
       - "DOCKER_HOST"
 
