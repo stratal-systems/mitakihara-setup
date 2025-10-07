@@ -8,12 +8,16 @@ then
 	exit 0
 fi
 
-# Install docker-compose without installing docker
-(
-	set -e
-	cd depget
-	apt download docker-compose-v2
-	dpkg -i --force-all ./docker-compose-v2*.deb
-)
+apt install docker-compose-v2
+systemctl stop docker
+systemctl disable docker
+
+## Install docker-compose without installing docker
+#(
+#	set -e
+#	cd depget
+#	apt download docker-compose-v2
+#	dpkg -i --force-all ./docker-compose-v2*.deb
+#)
 
 

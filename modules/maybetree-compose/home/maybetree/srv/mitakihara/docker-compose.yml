@@ -16,12 +16,6 @@ services:
     working_dir: "${HERE}"
     environment:
       - DOCKER_HOST
-
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: nvidia
-              count: all
-              capabilities: [gpu]
+    devices:
+      - nvidia.com/gpu=all
 
