@@ -7,7 +7,7 @@ After=podman.service
 Type=oneshot
 RemainAfterExit=yes
 WorkingDirectory=/srv/mitakihara
-ExecStart=/usr/local/bin/podman-compose up -d
+ExecStart=/srv/mitakihara/entrypoint
 ExecStop=/usr/local/bin/podman-compose down
 TimeoutStartSec=0
 

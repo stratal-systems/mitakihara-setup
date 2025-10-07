@@ -1,0 +1,7 @@
+#!/bin/bash
+
+podman login reg.stratal.systems --username public --password public
+export HERE="$(realpath "$(pwd)")"
+
+exec podman-compose up -d
+
