@@ -14,7 +14,7 @@ services:
       - ./data/minicycle/ssh:/root/.ssh:rw
     working_dir: "${HERE}"
     environment:
-      - "DOCKER_HOST"
+      - DOCKER_HOST
 
     deploy:
       resources:
