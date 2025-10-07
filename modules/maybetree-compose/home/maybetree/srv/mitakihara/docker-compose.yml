@@ -4,7 +4,7 @@ services:
     hostname: minicycle-rs
     container_name: minicycle-rs
     init: true
-    restart: never
+    restart: no
     ports:
       - 3030:3030
     volumes:
