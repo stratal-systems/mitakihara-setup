@@ -1,6 +1,6 @@
 services:
   minicycle:
-    image: reg.stratal.systems/minicycle-rs
+    image: minicycle-rs
     hostname: minicycle-rs
     container_name: minicycle-rs
     init: true
