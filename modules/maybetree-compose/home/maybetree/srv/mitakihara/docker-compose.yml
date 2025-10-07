@@ -2,7 +2,7 @@ services:
   minicycle:
     image: reg.stratal.systems/minicycle-rs
     hostname: minicycle-rs
-    name: minicycle-rs
+    container_name: minicycle-rs
     init: true
     restart: always
     gpus: all
