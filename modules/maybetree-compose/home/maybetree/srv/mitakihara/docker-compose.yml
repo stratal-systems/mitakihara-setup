@@ -5,7 +5,6 @@ services:
     container_name: minicycle-rs
     init: true
     restart: always
-    gpus: all
     ports:
       - 3030:3030
     volumes:
