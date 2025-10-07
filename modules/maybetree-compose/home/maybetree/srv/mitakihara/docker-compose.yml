@@ -12,7 +12,7 @@ services:
       - ./data/minicycle/minicycle:${HERE}/data/minicycle/minicycle:rw
       - ./data/minicycle/gnupg:/root/.gnupg:rw
       - ./data/minicycle/ssh:/root/.ssh:rw
-      - ${DOCKER_HOST}:${DOCKER_HOST}
+      - ${PODMAN_SOCKET}:${PODMAN_SOCKET}:rw
     working_dir: "${HERE}"
     environment:
       - DOCKER_HOST
