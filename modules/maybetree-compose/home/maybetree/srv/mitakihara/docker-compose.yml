@@ -6,7 +6,8 @@ services:
     init: true
     restart: always
     gpus: all
-    ports: 3030:3030
+    ports:
+      - 3030:3030
     volumes:
       - ./conf/minicycle:${HERE}/conf/minicycle:ro
       - ./data/minicycle/minicycle:${HERE}/data/minicycle/minicycle:rw
