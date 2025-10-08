@@ -23,4 +23,7 @@ do
 done
 
 git annex add modules/*.tar.zst
+git annex copy --to dav modules
+git annex sync origin
+
 
