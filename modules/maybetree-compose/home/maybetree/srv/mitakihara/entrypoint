@@ -10,5 +10,9 @@ podman login reg.stratal.systems --username public --password public
 
 export HERE="$(realpath "$(pwd)")"
 
+env | grep '^HERE=' > ./.env
+env | grep '^DOCKER_HOST=' >> ./.env
+env | grep '^PODMAN_SOCKET=' >> ./.env
+
 exec podman-compose up -d
 

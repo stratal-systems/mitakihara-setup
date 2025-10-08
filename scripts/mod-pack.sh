@@ -22,3 +22,5 @@ do
 	tar caf "$outpath" . --directory "./modules.unpack/$mod"
 done
 
+git annex add modules/*.tar.zst
+
