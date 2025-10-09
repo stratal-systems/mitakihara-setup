@@ -15,7 +15,8 @@ services:
       - ${PODMAN_SOCKET}:${PODMAN_SOCKET}:rw
     working_dir: "${HERE}"
     environment:
-      - DOCKER_HOST
+      - CONTAINER_HOST  # podman-remote uses this one
+      - DOCKER_HOST  # Just in case
     devices:
       - nvidia.com/gpu=all
 

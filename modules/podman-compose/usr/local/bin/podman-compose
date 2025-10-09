@@ -22,6 +22,7 @@ fi
 
 export PODMAN_SOCKET
 export DOCKER_HOST="unix://$PODMAN_SOCKET"
+export CONTAINER_HOST="unix://$PODMAN_SOCKET"
 
 $docker_compose "$@"
 
