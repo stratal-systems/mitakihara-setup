@@ -2,8 +2,9 @@
 
 set -e
 
-cd ~/srv/mitakihara
 test -r dep/stratal-systems.gpg
-cat dep/stratal-systems.gpg |
+pubkey="$(dep/stratal-systems.gpg)"
+cd ~/srv/mitakihara
+echo "$pubkey" |
 	podman-compose exec minicycle gpg --import
 
