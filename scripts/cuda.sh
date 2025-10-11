@@ -10,7 +10,7 @@ then
 	if [ -r "./dep/cuda-ubuntu2004.pin" ]
 	then
 		echo "cuda-ubuntu2004.pin in annex"
-		cp -L ./dep/cuda-ubuntu2004.pin /etc/apt/preferences.d/cuda-repository-pin-600
+		cp -L /etc/apt/preferences.d/cuda-repository-pin-600 ./dep/cuda-ubuntu2004.pin 
 	else
 		echo "cuda-ubuntu2004.pin not in annex, downloading..."
 		wget -O ./depget/cuda-ubuntu2004.pin https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-ubuntu2004.pin
