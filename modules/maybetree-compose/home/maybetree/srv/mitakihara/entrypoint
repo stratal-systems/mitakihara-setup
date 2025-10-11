@@ -1,18 +1,18 @@
 #!/bin/bash
 
-podman login reg.stratal.systems --username public --password public
-
-(
-	set -e
-	podman pull reg.stratal.systems/minicycle-rs
-	podman tag reg.stratal.systems/minicycle-rs minicycle-rs
-)
-
-export HERE="$(realpath "$(pwd)")"
-
-env | grep '^HERE=' > ./.env
-env | grep '^DOCKER_HOST=' >> ./.env
-env | grep '^PODMAN_SOCKET=' >> ./.env
-
-exec podman-compose up -d
+#podman login reg.stratal.systems --username public --password public
+#
+#(
+#	set -e
+#	podman pull reg.stratal.systems/minicycle-rs
+#	podman tag reg.stratal.systems/minicycle-rs minicycle-rs
+#)
+#
+#export HERE="$(realpath "$(pwd)")"
+#
+#env | grep '^HERE=' > ./.env
+#env | grep '^DOCKER_HOST=' >> ./.env
+#env | grep '^PODMAN_SOCKET=' >> ./.env
+#
+#exec podman-compose up -d
 

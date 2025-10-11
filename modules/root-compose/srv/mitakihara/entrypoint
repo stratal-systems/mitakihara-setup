@@ -1,8 +1,15 @@
 #!/bin/bash
 
-podman-compose stop || exit 1
+#podman-compose stop || exit 1
 
 podman login reg.stratal.systems --username public --password public
+
+(
+	set -e
+	podman pull reg.stratal.systems/minicycle-rs
+	podman tag reg.stratal.systems/minicycle-rs minicycle-rs
+)
+
 export HERE="$(realpath "$(pwd)")"
 
 env | grep '^HERE=' > ./.env

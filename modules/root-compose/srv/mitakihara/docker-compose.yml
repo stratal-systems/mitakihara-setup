@@ -16,3 +16,26 @@ services:
     command: tailscaled
     restart: unless-stopped
 
+services:
+  minicycle:
+    image: minicycle-rs
+    hostname: minicycle-rs
+    container_name: minicycle-rs
+    init: true
+    restart: no
+    ports:
+      - 3030:3030
+    volumes:
+      - ./conf/minicycle/minicycle.toml:${HERE:?error}/minicycle.toml:ro
+      - ./data/minicycle/minicycle:${HERE:?error}/data/minicycle/minicycle:rw
+      - ./data/minicycle/gnupg:/root/.gnupg:rw
+      - ./data/minicycle/ssh:/root/.ssh:rw
+      - ${PODMAN_SOCKET:?error}:${PODMAN_SOCKET:?error}:rw
+    working_dir: "${HERE:?error}"
+    environment:
+      - CONTAINER_HOST  # podman-remote uses this one
+      - DOCKER_HOST  # Just in case
+    devices:
+      - nvidia.com/gpu=all
+
+

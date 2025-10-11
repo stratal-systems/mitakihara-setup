@@ -1,22 +1,22 @@
-services:
-  minicycle:
-    image: minicycle-rs
-    hostname: minicycle-rs
-    container_name: minicycle-rs
-    init: true
-    restart: no
-    ports:
-      - 3030:3030
-    volumes:
-      - ./conf/minicycle/minicycle.toml:${HERE}/minicycle.toml:ro
-      - ./data/minicycle/minicycle:${HERE}/data/minicycle/minicycle:rw
-      - ./data/minicycle/gnupg:/root/.gnupg:rw
-      - ./data/minicycle/ssh:/root/.ssh:rw
-      - ${PODMAN_SOCKET}:${PODMAN_SOCKET}:rw
-    working_dir: "${HERE}"
-    environment:
-      - CONTAINER_HOST  # podman-remote uses this one
-      - DOCKER_HOST  # Just in case
-    devices:
-      - nvidia.com/gpu=all
+#services:
+#  minicycle:
+#    image: minicycle-rs
+#    hostname: minicycle-rs
+#    container_name: minicycle-rs
+#    init: true
+#    restart: no
+#    ports:
+#      - 3030:3030
+#    volumes:
+#      - ./conf/minicycle/minicycle.toml:${HERE}/minicycle.toml:ro
+#      - ./data/minicycle/minicycle:${HERE}/data/minicycle/minicycle:rw
+#      - ./data/minicycle/gnupg:/root/.gnupg:rw
+#      - ./data/minicycle/ssh:/root/.ssh:rw
+#      - ${PODMAN_SOCKET}:${PODMAN_SOCKET}:rw
+#    working_dir: "${HERE}"
+#    environment:
+#      - CONTAINER_HOST  # podman-remote uses this one
+#      - DOCKER_HOST  # Just in case
+#    devices:
+#      - nvidia.com/gpu=all
 
