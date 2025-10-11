@@ -11,7 +11,6 @@ git annex get .
 sudo ./scripts/mod-apply.sh root-compose
 sudo ./scripts/mod-apply.sh root-compose-secret
 (
-	cd /srv/mitakihara
-	sudo ./scripts/tailscale-register.sh
+	./scripts/gpg-add-key.sh
 	)
 
