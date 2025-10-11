@@ -10,4 +10,8 @@ git annex get .
 ./scripts/mod-apply.sh maybetree-compose-secret
 sudo ./scripts/mod-apply.sh root-compose
 sudo ./scripts/mod-apply.sh root-compose-secret
+(
+	cd /srv/mitakihara
+	sudo ./scripts/tailscale-register.sh
+	)
 
