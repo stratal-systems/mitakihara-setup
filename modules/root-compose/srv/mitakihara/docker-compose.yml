@@ -16,7 +16,6 @@ services:
     command: tailscaled
     restart: unless-stopped
 
-services:
   minicycle:
     image: minicycle-rs
     hostname: minicycle-rs
