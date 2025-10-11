@@ -10,7 +10,5 @@ git annex get .
 ./scripts/mod-apply.sh maybetree-compose-secret
 sudo ./scripts/mod-apply.sh root-compose
 sudo ./scripts/mod-apply.sh root-compose-secret
-(
-	./scripts/gpg-add-key.sh
-	)
+./scripts/gpg-add-key.sh
 
